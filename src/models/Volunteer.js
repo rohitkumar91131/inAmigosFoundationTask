@@ -3,20 +3,20 @@ import mongoose from 'mongoose';
 const VolunteerSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide the volunteer name.'],
+    required: true,
   },
-  post: {
+  role: {
     type: String,
-    required: [true, 'Please provide the volunteer designation/post.'],
+    required: true,
   },
   imageUrl: {
     type: String,
-    default: '',
+    required: true,
   },
   createdAt: {
     type: Date,
     default: Date.now,
-  },
+  }
 });
 
 export default mongoose.models.Volunteer || mongoose.model('Volunteer', VolunteerSchema);
